@@ -1,6 +1,6 @@
-PWD /home/rolando/Downloads/Yachay/8th Semester/quantum_info/project/source_files/Quantum Machine Learning Classification
+PWD /home/rolando/Downloads/Yachay/8th Semester/quantum_info/project/qml_classification/qml_classification
 INPUT /home/rolando/.miktex/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt
-INPUT /home/rolando/Downloads/Yachay/8th Semester/quantum_info/project/source_files/Quantum Machine Learning Classification/template.tex
+INPUT /home/rolando/Downloads/Yachay/8th Semester/quantum_info/project/qml_classification/qml_classification/template.tex
 OUTPUT template.log
 INPUT /usr/local/share/miktex-texmf/tex/latex/base/article.cls
 INPUT /usr/local/share/miktex-texmf/tex/latex/base/article.cls

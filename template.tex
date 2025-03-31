@@ -54,15 +54,14 @@ Classification is a key component of various scientific, technological and indus
 % keywords can be removed
 %\keywords{Machine Learning \and Quantum Mechanics \and Quantum Machine Learning \and Classification} 
 
-Classification is probably the most essential component of any activity, regardless of whether it is for scientific purposes. Its wide-ranging applications include finance, climate modelling, biomedical diagnostics, computational materials science, sociology, and human behaviour. Data is categorized into distinct groups to generate precise predictive models through classification. Typically, these issues are grouped into two primary categories: binary classification and multi-class classification. The binary classification process entails dividing data into two categories, such as identifying spam versus non-spam emails or differentiating between cancerous and non-cancerous tissues in medical diagnosis.
-In contrast, multi-classification encompasses additional categories, such as identifying skin lesion types associated with cancerous conditions \cite{skin}. On the other hand, computational resources frequently present substantial obstacles to implementing ML approaches. These constraints have sparked interest in investigating alternative computational paradigms, with quantum computing emerging as a promising candidate to address these bottlenecks.
-
-In this article, we provide a comprehensive review of the current state of quantum classification algorithms, specifically emphasizing the implementation of QSVMs. We critically assess the potential of these algorithms to revolutionize classification tasks in practical applications by evaluating their advantages and limitations. This work aims to determine whether QML is a transformative paradigm or if existing technological challenges still constrain it by analyzing the interaction between quantum computing and machine learning.
-
 \section*{Introduction}
-ML is a branch of computer science focused on identifying patterns in data attributes to make predictions about previously unseen inputs. It involves creating algorithms that enable computers to learn from data and make decisions autonomously, without being explicitly programmed for specific tasks. These algorithms are generally categorized into three main types: supervised, unsupervised, and reinforcement learning.
 
-Supervised learning relies on a labeled training dataset, where input-output relationships are clearly defined, allowing the algorithm to learn and classify new data based on these examples. Unsupervised learning, on the other hand, aims to uncover hidden structures, clusters, or groupings within unlabeled data. In both cases, the core task is pattern classification, which involves assigning new input data to predefined categories or classes.
+Classification is probably the most essential component of any activity, regardless of whether it is for scientific purposes. Its wide-ranging applications include finance, climate modelling, biomedical diagnostics, computational materials science, sociology, and human behaviour. Data is categorized into distinct groups to generate precise predictive models through classification. Typically, these issues are grouped into two primary categories: binary classification and multi-class classification. The binary classification process entails dividing data into two categories, such as identifying spam versus non-spam emails or differentiating between cancerous and non-cancerous tissues in medical diagnosis.
+In contrast, multi-classification encompasses additional categories, such as identifying skin lesion types associated with cancerous conditions \cite{10613907skin}. On the other hand, computational resources frequently present substantial obstacles to implementing ML approaches. These constraints have sparked interest in investigating alternative computational paradigms, with quantum computing emerging as a promising candidate to address these bottlenecks.
+
+ML is a branch of computer science focused on identifying patterns in data attributes to make predictions about previously unseen inputs. It involves creating algorithms that enable computers to learn from data and make decisions autonomously, without being explicitly programmed for specific tasks. These algorithms are generally categorized into three main types: supervised, unsupervised, and reinforcement learning \cite{Ayodele10}.
+
+Supervised learning relies on a labeled training dataset, where input-output relationships are clearly defined, allowing the algorithm to learn and classify new data based on these examples. Unsupervised learning, on the other hand, aims to uncover hidden structures, clusters, or groupings within unlabeled data \cite{10047618}. In both cases, the core task is pattern classification, which involves assigning new input data to predefined categories or classes.
 
 Reinforcement learning, which mimics aspects of human learning, operates within a framework of rules and objectives. Here, the algorithm receives rewards or penalties based on the actions it takes to achieve a goal. Rewards reinforce successful strategies, while penalties prompt adjustments to improve decision-making. While reinforcement learning is a powerful approach, this work will not focus on it, as the primary application under review is classification.
 
@@ -79,6 +78,9 @@ help in quantum tasks and this is an active area of investigation, with classica
     \caption{QML four main tasks}
     \label{fig:qtasks}
 \end{figure}
+
+In this article, we provide a comprehensive review of the current state of quantum classification algorithms, specifically emphasizing the implementation of QSVMs. We critically assess the potential of these algorithms to revolutionize classification tasks in practical applications by evaluating their advantages and limitations. This work aims to determine whether QML is a transformative paradigm or if existing technological challenges still constrain it by analyzing the interaction between quantum computing and machine learning.
+
 
 \section*{Quantum Classification Algorithms}
 \subsection*{Quantum k-nearest neighbours}

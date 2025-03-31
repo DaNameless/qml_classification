@@ -1,11 +1,23 @@
 \begin{thebibliography}{10}
 
-\bibitem{skin}
+\bibitem{10613907skin}
 S.~Sofana Reka, H.~Leela Karthikeyan, A.~Jack Shakil, Prakash Venugopal, and
   Manigandan Muniraj.
-\newblock {Exploring Quantum Machine Learning for Enhanced Skin Lesion
-  Classification: A Comparative Study of Implementation Methods}.
+\newblock Exploring quantum machine learning for enhanced skin lesion
+  classification: A comparative study of implementation methods.
 \newblock {\em IEEE Access}, 12:104568--104584, 2024.
+
+\bibitem{Ayodele10}
+Taiwo~Oladipupo Ayodele.
+\newblock Types of machine learning algorithms.
+\newblock In Yagang Zhang, editor, {\em New Advances in Machine Learning},
+  chapter~3. IntechOpen, Rijeka, 2010.
+
+\bibitem{10047618}
+Vratika Gupta, Vinay~Kumar Mishra, Priyank Singhal, and Amit Kumar.
+\newblock An overview of supervised machine learning algorithm.
+\newblock In {\em 2022 11th International Conference on System Modeling \&
+  Advancement in Research Trends (SMART)}, pages 87--92, Dec 2022.
 
 \bibitem{degruyterIntroductionQuantum}
 Siddhartha Bhattacharyya.
@@ -113,13 +125,6 @@ Ricardo Daniel~Monteiro Simões, Patrick Huber, Nicola Meier, Nikita Smailov,
   Rudolf~M. Füchslin, and Kurt Stockinger.
 \newblock Experimental evaluation of quantum machine learning algorithms.
 \newblock {\em IEEE Access}, 11:6197--6208, 2023.
-
-\bibitem{10613907}
-S.~Sofana Reka, H.~Leela Karthikeyan, A.~Jack Shakil, Prakash Venugopal, and
-  Manigandan Muniraj.
-\newblock Exploring quantum machine learning for enhanced skin lesion
-  classification: A comparative study of implementation methods.
-\newblock {\em IEEE Access}, 12:104568--104584, 2024.
 
 \bibitem{9293291}
 Dong Yumin, Mingqiu Wu, and Jinlei Zhang.
