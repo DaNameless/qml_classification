@@ -1,0 +1,130 @@
+\begin{thebibliography}{10}
+
+\bibitem{skin}
+S.~Sofana Reka, H.~Leela Karthikeyan, A.~Jack Shakil, Prakash Venugopal, and
+  Manigandan Muniraj.
+\newblock {Exploring Quantum Machine Learning for Enhanced Skin Lesion
+  Classification: A Comparative Study of Implementation Methods}.
+\newblock {\em IEEE Access}, 12:104568--104584, 2024.
+
+\bibitem{degruyterIntroductionQuantum}
+Siddhartha Bhattacharyya.
+\newblock 1. {I}ntroduction to quantum machine learning --- degruyter.com.
+\newblock
+  \url{https://www.degruyter.com/document/doi/10.1515/9783110670707-001/html?lang=en&srsltid=AfmBOooSaEWc-Lhu5Q72P5vuHWm_Y-YgM6DHeMRsIa9RGnSxPbyiBfNP}.
+\newblock [Accessed 09-03-2025].
+
+\bibitem{Nielsen_Chuang_2010}
+Michael~A. Nielsen and Isaac~L. Chuang.
+\newblock {\em Quantum Computation and Quantum Information: 10th Anniversary
+  Edition}.
+\newblock Cambridge University Press, 2010.
+
+\bibitem{Arute2019}
+Frank Arute, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph~C. Bardin, Rami
+  Barends, Rupak Biswas, Sergio Boixo, Fernando~G.S.L. Brandao, David~A. Buell,
+  Brian Burkett, Yu~Chen, Zijun Chen, Ben Chiaro, Roberto Collins, William
+  Courtney, Andrew Dunsworth, Edward Farhi, Brooks Foxen, Austin Fowler, Craig
+  Gidney, Marissa Giustina, Rob Graff, Keith Guerin, Steve Habegger, Matthew~P.
+  Harrigan, Michael~J. Hartmann, Alan Ho, Markus Hoffmann, Trent Huang,
+  Travis~S. Humble, Sergei~V. Isakov, Evan Jeffrey, Zhang Jiang, Dvir Kafri,
+  Kostyantyn Kechedzhi, Julian Kelly, Paul~V. Klimov, Sergey Knysh, Alexander
+  Korotkov, Fedor Kostritsa, David Landhuis, Mike Lindmark, Erik Lucero, Dmitry
+  Lyakh, Salvatore Mandr{\`{a}}, Jarrod~R. McClean, Matthew McEwen, Anthony
+  Megrant, Xiao Mi, Kristel Michielsen, Masoud Mohseni, Josh Mutus, Ofer
+  Naaman, Matthew Neeley, Charles Neill, Murphy~Yuezhen Niu, Eric Ostby, Andre
+  Petukhov, John~C. Platt, Chris Quintana, Eleanor~G. Rieffel, Pedram Roushan,
+  Nicholas~C. Rubin, Daniel Sank, Kevin~J. Satzinger, Vadim Smelyanskiy,
+  Kevin~J. Sung, Matthew~D. Trevithick, Amit Vainsencher, Benjamin Villalonga,
+  Theodore White, Z.~Jamie Yao, Ping Yeh, Adam Zalcman, Hartmut Neven, and
+  John~M. Martinis.
+\newblock {Quantum supremacy using a programmable superconducting processor}.
+\newblock {\em Nature 2019 574:7779}, 574(7779):505--510, oct 2019.
+
+\bibitem{ccalg}
+Ewin Tang.
+\newblock A quantum-inspired classical algorithm for recommendation systems.
+\newblock In {\em Proceedings of the 51st Annual ACM SIGACT Symposium on Theory
+  of Computing}, STOC 2019, page 217–228, New York, NY, USA, 2019.
+  Association for Computing Machinery.
+
+\bibitem{cq}
+Esma A{\"{i}}meur, Gilles Brassard, and S{\'{e}}bastien Gambs.
+\newblock {Quantum speed-up for unsupervised learning}.
+\newblock {\em Machine Learning}, 90(2):261--287, feb 2013.
+
+\bibitem{charqc}
+Muhammad Usman, Yi~Zheng Wong, Charles~D. Hill, and Lloyd~C.L. Hollenberg.
+\newblock {Framework for atomic-level characterisation of quantum computer
+  arrays by machine learning}.
+\newblock {\em npj Computational Materials 2020 6:1}, 6(1):1--8, mar 2020.
+
+\bibitem{controlqc}
+Murphy~Yuezhen Niu, Sergio Boixo, Vadim~N. Smelyanskiy, and Hartmut Neven.
+\newblock {Universal quantum control through deep reinforcement learning}.
+\newblock {\em npj Quantum Information 2019 5:1}, 5(1):1--8, apr 2019.
+
+\bibitem{readoutqc}
+Easwar Magesan, Jay~M. Gambetta, A.~D. C{\'{o}}rcoles, and Jerry~M. Chow.
+\newblock {Machine Learning for Discriminating Quantum Measurement Trajectories
+  and Improving Readout}.
+\newblock {\em Physical Review Letters}, 114(20):200501, may 2015.
+
+\bibitem{Lloyd2013}
+Seth Lloyd, Masoud Mohseni, Patrick Rebentrost, Seth Lloyd, Masoud Mohseni, and
+  Patrick Rebentrost.
+\newblock Quantum algorithms for supervised and unsupervised machine learning.
+\newblock {\em arXiv}, page arXiv:1307.0411, 2013.
+
+\bibitem{swaptest}
+Harry Buhrman, Richard Cleve, John Watrous, and Ronald de~Wolf.
+\newblock Quantum fingerprinting.
+\newblock {\em Physical Review Letters}, 87:167902, 9 2001.
+
+\bibitem{kwak2021quantumneuralnetworksconcepts}
+Yunseok Kwak, Won~Joon Yun, Soyi Jung, and Joongheon Kim.
+\newblock Quantum neural networks: Concepts, applications, and challenges,
+  2021.
+
+\bibitem{kwon2024featuremapquantumdata}
+Hyeokjea Kwon, Hojun Lee, and Joonwoo Bae.
+\newblock Feature map for quantum data in classification, 2024.
+
+\bibitem{farhi2018classificationquantumneuralnetworks}
+Edward Farhi and Hartmut Neven.
+\newblock Classification with quantum neural networks on near term processors,
+  2018.
+
+\bibitem{qiskittheory}
+{Q}uantum {N}eural {N}etworks - {Q}iskit {M}achine {L}earning 0.8.2 ---
+  qiskit-community.github.io.
+\newblock
+  \url{https://qiskit-community.github.io/qiskit-machine-learning/tutorials/01_neural_networks.html}.
+\newblock [Accessed 26-03-2025].
+
+\bibitem{9528698}
+Yunseok Kwak, Won~Joon Yun, Soyi Jung, and Joongheon Kim.
+\newblock Quantum neural networks: Concepts, applications, and challenges.
+\newblock In {\em 2021 Twelfth International Conference on Ubiquitous and
+  Future Networks (ICUFN)}, pages 413--416, 2021.
+
+\bibitem{10015720}
+Ricardo Daniel~Monteiro Simões, Patrick Huber, Nicola Meier, Nikita Smailov,
+  Rudolf~M. Füchslin, and Kurt Stockinger.
+\newblock Experimental evaluation of quantum machine learning algorithms.
+\newblock {\em IEEE Access}, 11:6197--6208, 2023.
+
+\bibitem{10613907}
+S.~Sofana Reka, H.~Leela Karthikeyan, A.~Jack Shakil, Prakash Venugopal, and
+  Manigandan Muniraj.
+\newblock Exploring quantum machine learning for enhanced skin lesion
+  classification: A comparative study of implementation methods.
+\newblock {\em IEEE Access}, 12:104568--104584, 2024.
+
+\bibitem{9293291}
+Dong Yumin, Mingqiu Wu, and Jinlei Zhang.
+\newblock Recognition of pneumonia image based on improved quantum neural
+  network.
+\newblock {\em IEEE Access}, 8:224500--224512, 2020.
+
+\end{thebibliography}
