@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.12) (preloaded format=pdflatex 2025.3.29)  31 MAR 2025 14:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.12) (preloaded format=pdflatex 2025.3.29)  31 MAR 2025 18:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -276,10 +276,35 @@ File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen168
 \Gin@req@width=\dimen169
-) (/home/rolando/.miktex/texmfs/install/tex/latex/braket/braket.sty) (/usr/local/share/miktex-texmf/tex/generic/babel/babel.sty
+) (/home/rolando/.miktex/texmfs/install/tex/latex/braket/braket.sty) (/usr/local/share/miktex-texmf/tex/latex/tools/array.sty
+Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
+\col@sep=\dimen170
+\ar@mcellbox=\box56
+\extrarowheight=\dimen171
+\NC@list=\toks27
+\extratabsurround=\skip72
+\backup@length=\skip73
+\ar@cellbox=\box57
+) (/usr/local/share/miktex-texmf/tex/latex/ragged2e/ragged2e.sty
+Package: ragged2e 2023/06/22 v3.6 ragged2e Package
+\CenteringLeftskip=\skip74
+\RaggedLeftLeftskip=\skip75
+\RaggedRightLeftskip=\skip76
+\CenteringRightskip=\skip77
+\RaggedLeftRightskip=\skip78
+\RaggedRightRightskip=\skip79
+\CenteringParfillskip=\skip80
+\RaggedLeftParfillskip=\skip81
+\RaggedRightParfillskip=\skip82
+\JustifyingParfillskip=\skip83
+\CenteringParindent=\skip84
+\RaggedLeftParindent=\skip85
+\RaggedRightParindent=\skip86
+\JustifyingParindent=\skip87
+) (/usr/local/share/miktex-texmf/tex/generic/babel/babel.sty
 Package: babel 2025/03/10 v25.5 The multilingual framework for pdfLaTeX, LuaLaTeX and XeLaTeX
 \babel@savecnt=\count296
-\U@D=\dimen170
+\U@D=\dimen172
 \l@unhyphenated=\language79
  (/usr/local/share/miktex-texmf/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
@@ -303,8 +328,8 @@ Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 11.
 ) (/home/rolando/.miktex/texmfs/install/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip72
-\bibsep=\skip73
+\bibhang=\skip88
+\bibsep=\skip89
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count298
 ) (/usr/local/share/miktex-texmf/tex/latex/amsfonts/amssymb.sty
@@ -312,24 +337,24 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 ) (template.aux)
 \openout1 = `template.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -397,25 +422,25 @@ LaTeX Font Info:    ... okay on input line 48.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 48.
+Package hyperref Info: Link coloring OFF on input line 53.
 (template.out) (template.out)
 \@outlinefile=\write4
 \openout4 = `template.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 48.
-Package microtype Info: Applying patch `item' on input line 48.
-Package microtype Info: Applying patch `toc' on input line 48.
-Package microtype Info: Applying patch `eqnum' on input line 48.
-Package microtype Info: Applying patch `footnote' on input line 48.
-Package microtype Info: Applying patch `verbatim' on input line 48.
-LaTeX Info: Redefining \microtypesetup on input line 48.
+LaTeX Info: Redefining \microtypecontext on input line 53.
+Package microtype Info: Applying patch `item' on input line 53.
+Package microtype Info: Applying patch `toc' on input line 53.
+Package microtype Info: Applying patch `eqnum' on input line 53.
+Package microtype Info: Applying patch `footnote' on input line 53.
+Package microtype Info: Applying patch `verbatim' on input line 53.
+LaTeX Info: Redefining \microtypesetup on input line 53.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 48.
+LaTeX Info: Redefining \showhyphens on input line 53.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -424,16 +449,16 @@ File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 ) (/usr/local/share/miktex-texmf/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count299
-\scratchdimen=\dimen171
-\scratchbox=\box56
+\scratchdimen=\dimen173
+\scratchbox=\box58
 \nofMPsegments=\count300
 \nofMParguments=\count301
-\everyMPshowfont=\toks27
+\everyMPshowfont=\toks28
 \MPscratchCnt=\count302
-\MPscratchDim=\dimen172
+\MPscratchDim=\dimen174
 \MPnumerator=\count303
 \makeMPintoPDFobject=\count304
-\everyMPtoPDFconversion=\toks28
+\everyMPtoPDFconversion=\toks29
 ) (/usr/local/share/miktex-texmf/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -442,13 +467,13 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 )) (/home/rolando/.miktex/texmfs/install/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
  (/usr/local/share/miktex-texmf/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/home/rolando/.miktex/texmfs/install/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
  (/usr/local/share/miktex-texmf/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/home/rolando/.miktex/texmfs/install/tex/latex/microtype/mt-msb.cfg
@@ -464,51 +489,44 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 {/home/rolando/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map}{/usr/local/share/miktex-texmf/fonts/enc/dvips/base/8r.enc}]
-<figures/QMLtypes.png, id=27, 1693.82813pt x 1693.82813pt>
+<figures/QMLtypes.png, id=39, 1693.82813pt x 1693.82813pt>
 File: figures/QMLtypes.png Graphic file (type png)
 <use figures/QMLtypes.png>
-Package pdftex.def Info: figures/QMLtypes.png  used on input line 77.
+Package pdftex.def Info: figures/QMLtypes.png  used on input line 109.
 (pdftex.def)             Requested size: 321.83069pt x 321.83069pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-[2]
 
-[3 <./figures/QMLtypes.png>]
-<figures/nns.png, id=84, 1693.82813pt x 1693.82813pt>
+[2 <./figures/QMLtypes.png>]
+
+[3]
+<figures/nns.png, id=93, 1693.82813pt x 1693.82813pt>
 File: figures/nns.png Graphic file (type png)
 <use figures/nns.png>
-Package pdftex.def Info: figures/nns.png  used on input line 125.
+Package pdftex.def Info: figures/nns.png  used on input line 205.
 (pdftex.def)             Requested size: 254.06325pt x 254.06325pt.
-
-
-Package natbib Warning: Citation `10613907' on page 4 undefined on input line 138.
-
-Excluding 'comment' comment. (template.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 23--28
-\T1/cmtt/m/n/10 / / www . degruyter . com / document / doi / 10 . 1515 / 9783110670707-[]001 / html ? lang = en & srsltid =
- []
-
-
-Underfull \vbox (badness 1122) has occurred while \output is active []
+ Excluding 'comment' comment. (template.bbl
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [4 <./figures/nns.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 111--116
+Underfull \hbox (badness 10000) in paragraph at lines 67--72
+\T1/cmtt/m/n/10 / / www . degruyter . com / document / doi / 10 . 1515 / 9783110670707-[]001 / html ? lang = en & srsltid =
+ []
+
+
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 155--160
 \T1/cmtt/m/n/10 qiskit-[]community . github . io / qiskit-[]machine-[]learning / tutorials / 01 _ neural _ networks . html$[]\T1/ptm/m/n/10 (+20) .
  []
 
 )
 
-Package natbib Warning: There were undefined citations.
-
-
-
-[5] (template.aux)
+[6] (template.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -517,17 +535,17 @@ Package rerunfilecheck Info: File `template.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 14482 strings out of 473531
- 234624 string characters out of 5722064
- 762111 words of memory out of 5000000
- 37298 multiletter control sequences out of 15000+600000
- 599672 words of font info for 165 fonts, out of 8000000 for 9000
+ 14704 strings out of 473531
+ 238467 string characters out of 5722064
+ 770159 words of memory out of 5000000
+ 37472 multiletter control sequences out of 15000+600000
+ 606459 words of font info for 187 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,12n,93p,1649b,591s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,11n,93p,1685b,639s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/rolando/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1000.pk></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/share/miktex-texmf/fonts/type1/urw/times/utmb8a.pfb></usr/local/share/miktex-texmf/fonts/type1/urw/times/utmr8a.pfb></usr/local/share/miktex-texmf/fonts/type1/urw/times/utmri8a.pfb>
-Output written on template.pdf (5 pages, 1248447 bytes).
+Output written on template.pdf (6 pages, 1254911 bytes).
 PDF statistics:
- 237 PDF objects out of 1000 (max. 8388607)
- 40 named destinations out of 1000 (max. 500000)
- 36875 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 257 PDF objects out of 1000 (max. 8388607)
+ 48 named destinations out of 1000 (max. 500000)
+ 45067 words of extra memory for PDF output out of 51595 (max. 10000000)
 

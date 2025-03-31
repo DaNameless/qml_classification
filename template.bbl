@@ -1,6 +1,50 @@
 \begin{thebibliography}{10}
 
-\bibitem{10613907skin}
+\bibitem{SMAILOVIC2014181}
+Jasmina Smailović, Miha Grčar, Nada Lavrač, and Martin Žnidaršič.
+\newblock Stream-based active learning for sentiment analysis in the financial
+  domain.
+\newblock {\em Information Sciences}, 285:181--203, 2014.
+\newblock Processing and Mining Complex Data Streams.
+
+\bibitem{gmd-16-6433-2023}
+C.~O. de~Burgh-Day and T.~Leeuwenburg.
+\newblock Machine learning for numerical weather and climate modelling: a
+  review.
+\newblock {\em Geoscientific Model Development}, 16(22):6433--6477, 2023.
+
+\bibitem{doi:10.1148/rg.2017160130}
+Bradley~J. Erickson, Panagiotis Korfiatis, Zeynettin Akkus, and Timothy~L.
+  Kline.
+\newblock Machine learning for medical imaging.
+\newblock {\em RadioGraphics}, 37(2):505--515, 2017.
+\newblock PMID: 28212054.
+
+\bibitem{LIU2017159}
+Yue Liu, Tianlu Zhao, Wangwei Ju, and Siqi Shi.
+\newblock Materials discovery and design using machine learning.
+\newblock {\em Journal of Materiomics}, 3(3):159--177, 2017.
+\newblock High-throughput Experimental and Modeling Research toward Advanced
+  Batteries.
+
+\bibitem{Franco2021}
+Giovanni~Di Franco and Michele Santurro.
+\newblock Machine learning, artificial neural networks and social research.
+\newblock 55:1007--1025, 2021.
+
+\bibitem{Richards2019}
+Blake~A. Richards, Timothy~P. Lillicrap, Philippe Beaudoin, Yoshua Bengio,
+  Rafal Bogacz, Amelia Christensen, Claudia Clopath, Rui~Ponte Costa, Archy
+  de~Berker, Surya Ganguli, Colleen~J. Gillon, Danijar Hafner, Adam Kepecs,
+  Nikolaus Kriegeskorte, Peter Latham, Grace~W. Lindsay, Kenneth~D. Miller,
+  Richard Naud, Christopher~C. Pack, Panayiota Poirazi, Pieter Roelfsema, João
+  Sacramento, Andrew Saxe, Benjamin Scellier, Anna~C. Schapiro, Walter Senn,
+  Greg Wayne, Daniel Yamins, Friedemann Zenke, Joel Zylberberg, Denis Therien,
+  and Konrad~P. Kording.
+\newblock A deep learning framework for neuroscience.
+\newblock {\em Nature Neuroscience 2019 22:11}, 22:1761--1770, 10 2019.
+
+\bibitem{10613907}
 S.~Sofana Reka, H.~Leela Karthikeyan, A.~Jack Shakil, Prakash Venugopal, and
   Manigandan Muniraj.
 \newblock Exploring quantum machine learning for enhanced skin lesion
