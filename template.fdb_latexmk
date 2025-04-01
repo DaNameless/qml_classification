@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex template"] 0 "template.aux" "template.bbl" "template" 1743462519.83417 -1
-  "./references.bib" 1743460573.36651 32131 57bc32f67ea0120f85c62527a518e2c3 ""
+["bibtex template"] 1743521276.91704 "template.aux" "template.bbl" "template" 1743521278.83045 0
+  "./references.bib" 1743474779.72198 32131 57bc32f67ea0120f85c62527a518e2c3 ""
   "/usr/local/share/miktex-texmf/bibtex/bst/bibtex/unsrt.bst" 1743283965.4789 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "template.aux" 1743462519.2769 3127 dd46e3ecd33fb9fefc34020a613e94c6 "pdflatex"
+  "template.aux" 1743521278.42948 3637 295a06a6596de2bb7c33460de2ca0066 "pdflatex"
   (generated)
   "template.bbl"
   "template.blg"
   (rewritten before read)
-["pdflatex"] 1743462517.48271 "/home/rolando/Downloads/Yachay/8th Semester/quantum_info/project/qml_classification/qml_classification/template.tex" "template.pdf" "template" 1743462519.83441 0
+["pdflatex"] 1743521277.08203 "/home/rolando/Downloads/Yachay/8th Semester/quantum_info/project/qml_classification/qml_classification/template.tex" "template.pdf" "template" 1743521278.83065 0
   "/home/rolando/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map" 1743450159.56438 82684 3a87f55ef758bc5fe6abfed9a40cca26 ""
   "/home/rolando/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1000.pk" 1743289150.0168 20028 f3569d2cabfbcea79da4d720ceee6fb3 ""
   "/home/rolando/.miktex/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1743284101.79124 12028551 bed101834015a3891dbc3c4adb973d3a ""
@@ -45,7 +45,7 @@
   "/home/rolando/.miktex/texmfs/install/tex/latex/refcount/refcount.sty" 1743289137.30797 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "/home/rolando/.miktex/texmfs/install/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1743289143.16989 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "/home/rolando/.miktex/texmfs/install/tex/latex/units/nicefrac.sty" 1743289145.37786 4163 98f285ced1c61c25144faeaf509fbad0 ""
-  "/home/rolando/Downloads/Yachay/8th Semester/quantum_info/project/qml_classification/qml_classification/template.tex" 1743462517.02998 19135 b5fb16d3979489372dae3b0c2948150c ""
+  "/home/rolando/Downloads/Yachay/8th Semester/quantum_info/project/qml_classification/qml_classification/template.tex" 1743521274.77453 20071 41e3609332b8d66e9bc7c6cb0d1b5aaa ""
   "/usr/local/share/miktex-texmf/fonts/enc/dvips/base/8r.enc" 1743283967.49687 4993 1194fb36dfcb11d9ae9802f2b00b60a3 ""
   "/usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmb8r.tfm" 1136790254 4524 6bce29db5bc272ba5f332261583fee9c ""
   "/usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmb8t.tfm" 1136790254 6880 f19b8995b61c334d78fc734065f6b4d4 ""
@@ -125,12 +125,14 @@
   "/usr/local/share/miktex-texmf/tex/latex/tools/array.sty" 1743283971.89881 14552 27664839421e418b87f56fa4c6f66b1a ""
   "/usr/local/share/miktex-texmf/tex/latex/url/url.sty" 1743283988.43758 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "arxiv.sty" 1743307052 7490 a96b0cef0e35ec8e90b092792e37a0b7 ""
-  "figures/QMLtypes.png" 1743293978.38727 606853 9441b04f6ff0cfe157881824ea2de358 ""
+  "figures/Overview QML.png" 1743521132.74835 122747 ee68491c4c978542043c008228a85e10 ""
+  "figures/QMLtypes.png" 1743467205.72117 650543 c2b781b4c6690a5227eda20b56be9c5c ""
   "figures/nns.png" 1743353104.11562 740690 2060c12da032e3042b5d9d961ba431f5 ""
-  "template.aux" 1743462519.2769 3127 dd46e3ecd33fb9fefc34020a613e94c6 "pdflatex"
-  "template.bbl" 1743462079.80244 7987 ceaacf2f5c8a3de3df70a480d232c692 "bibtex template"
-  "template.out" 1743462517.99495 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "template.tex" 1743462517.02998 19135 b5fb16d3979489372dae3b0c2948150c ""
+  "figures/swap.png" 1743514903.79856 29704 a2df3a00565e65e454c7182628e656e6 ""
+  "template.aux" 1743521278.42948 3637 295a06a6596de2bb7c33460de2ca0066 "pdflatex"
+  "template.bbl" 1743521277.0355 7987 ceaacf2f5c8a3de3df70a480d232c692 "bibtex template"
+  "template.out" 1743521277.4215 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "template.tex" 1743521274.77453 20071 41e3609332b8d66e9bc7c6cb0d1b5aaa ""
   (generated)
   "template.aux"
   "template.log"

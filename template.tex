@@ -107,7 +107,7 @@ for instance, analyzing molecular ground state energy directly in quantum comput
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.19]{figures/QMLtypes.png}
-    \caption{QML tasks from different perspectives}
+    \caption{QML tasks from different perspectives. a) QC. b) CC. c) QQ. d) CQ. }
     \label{fig:qtasks}
 \end{figure}
 
@@ -115,7 +115,7 @@ In this work, we provide a comprehensive review of the current state of quantum 
 and QNNs. 
 We critically assess the potential of these algorithms to revolutionize classification tasks in practical applications by evaluating their advantages and limitations. 
 This work aims to determine whether QML is a transformative paradigm or if existing technological challenges still constrain it by analyzing the interaction between 
-quantum computing and machine learning. In Table \ref{tab:qml_methods} we provide an overview of the topics covered in this work, as well as the relevant literature reviewed. 
+quantum computing and machine learning. In Table \ref{tab:qml_methods} and Figure \ref{fig:overview} we provide an overview of the topics covered in this work, as well as the relevant literature reviewed. 
 
 
 \begin{table}[ht]
@@ -162,6 +162,13 @@ quantum computing and machine learning. In Table \ref{tab:qml_methods} we provid
   \end{tabular}
   \end{table}
 
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.3]{"figures/Overview QML.png"}
+    \caption{Overview of quantum machine learning classification methods}
+    \label{fig:overview}
+  \end{figure}
+
 \section*{Quantum Classification Algorithms}
 \subsection*{Quantum k-nearest neighbours}
 The classical k-nearest neighbours algorithm assigns a class to an unclassified object by comparing its vector $\vec{v}$ to previously classified training samples. This is done using a distance metric, typically Euclidean or Hamming distance, to identify the k-nearest neighbours in the multidimensional space. The steps of the algorithm can be summarized as follows:
@@ -172,28 +179,42 @@ The classical k-nearest neighbours algorithm assigns a class to an unclassified 
     \item Assign the class with the highest frequency among the $k$ nearest samples to the object $\vec{v}$.
 \end{enumerate}
 
-This approach relies on the assumption that objects close to each other in the multidimensional space share similar properties. Translating this concept into a quantum framework requires redefining distance metrics in quantum terms. Building on the data representation proposed by Lloyd et al. \cite{Lloyd2013}, as shown in Eq. \ref{eq:1}, a method was developed to quantify the distance between classical object vectors $\vec{x}$ and $\vec{y}$ using quantum measurements.
+This approach relies on the assumption that objects close to each other in the multidimensional space share similar properties. Now, the most expensive step in these algorithms is determining the distance between
+the test sample and the train states and by the aforementioned properties of quantum computing, this task is a good instance to use QML.
+Translating this concept into a quantum framework requires redefining distance metrics in quantum terms and consider the fidelity or overlap
+$|\braket{x|y}|$ as a measure of similarity between states. 
+
+Then, building on the data representation proposed by Lloyd et al. \cite{Lloyd2013}, as shown in Eq. \ref{eq:1}, to evaluate the distance from a given $\vec{x} \in \mathbb{R}^N$ to the centroid of a given set $V_j$, $\vec{y_j}$, one can calculate the inner product of the state $\ket{\psi} = \frac{\sqrt{2}}{2} (\ket{0, x} + \ket{1,y_j})$, constructed for the system qubits and an adjoined ancilla, 
+with the state $\ket{\phi} = \frac{\sqrt{Z}}{Z}(|\vec{x}|\ket{0} - |\vec{y_j}|\ket{1})$, where $Z = |\vec{x}|^2 + |\vec{y_j}|^2$ ensures normalization. This leads to the identity in Eq. \ref{eq:2}, which provides a way to compute the distance between the vectors.
 
 \begin{equation}
-    \ket{v} = |v|^{-\frac{1}{2}} \vec{v}
+    \ket{x} = |x|^{-\frac{1}{2}} \vec{x}
     \label{eq:1}
 \end{equation}
-
-The authors begin by calculating the inner product of the ancilla state $\ket{\psi} = \frac{\sqrt{2}}{2} (\ket{0, x} + \ket{1,y})$ with the state $\ket{\phi} = \frac{\sqrt{Z}}{Z}(|\vec{x}|\ket{0} - |\vec{y}|\ket{1})$, where $Z = |\vec{x}|^2 + |\vec{y}|^2$ ensures normalization. This leads to the identity in Eq. \ref{eq:2}, which provides a way to compute the distance between the vectors.
 
 \begin{equation}
     |\vec{x} - \vec{y}|^2 = Z \, |\braket{\psi | \phi}|^2
     \label{eq:2}
 \end{equation}
 
-The overlap $|\braket{\psi | \phi}|^2$ in Eq. \ref{eq:2} can be physically retrieved using a routine known as the swap test \cite{swaptest}. The probability of measuring the initial state $\ket{\xi}$ in this test is given by Eq. \ref{eq:3}, where the overlap appears explicitly.
+The overlap $|\braket{\psi | \phi}|^2$ in Eq. \ref{eq:2} can be physically retrieved using a routine known as the swap test \cite{swaptest} show in Figure \ref{fig:swap}, 
+performing a projection on the ancilla alone. The probability of measuring the initial state $\ket{\xi}=\ket{x, y_j, 0_{anc}}$ in this test is given by Eq. \ref{eq:3}, where the overlap appears explicitly.
 
 \begin{equation}
     P(\ket{\xi}) = \frac{1 + |\braket{\psi | \phi}|^2}{2}
     \label{eq:3}
 \end{equation}
 
-Using these principles, a quantum version of the nearest centroid algorithm can be constructed. Here, $\vec{x}$ represents the sample to be classified, and $\vec{y} = \frac{\sum_p \vec{v}^p}{N_c}$ is the centroid of a given class. The authors argue that this quantum method, including the construction of quantum states, achieves greater efficiency than the classical polynomial runtime.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.15]{figures/swap.png}
+  \caption{Swap Circuit}
+  \label{fig:swap}
+\end{figure}
+
+The authors argue that this quantum method, including the construction of quantum states, achieves greater efficiency than the classical polynomial runtime while preserving quantum coherence during the state creation.
+Using these principles, a quantum version of the nearest centroid algorithm can be constructed. Here, $\vec{x}$ represents the sample to be classified, and $\vec{y_j} = \frac{\sum_p \vec{v}^p_j}{N_j}$ is the centroid of the given class $V_j$. 
+
 
 \subsection*{Quantum Neural Networks (QNNs)}
 Classical neural networks (NNs) are computational models inspired by biological neurons, processing input data through layered architectures of interconnected nodes to produce a desired classification output. As illustrated in Fig. \ref{fig:qnn1}, these models adjust their parameters via backpropagation to minimize a predefined loss function, optimizing their predictive performance through iterative training. On the other hand, QNNs are a specialized subclass of variational quantum algorithms, implemented using parameterized quantum circuits. These circuits employ tunable unitary rotation gates and entangling operations to perform numerical tasks such as optimization, approximation, and classification \cite{kwak2021quantumneuralnetworksconcepts}.
