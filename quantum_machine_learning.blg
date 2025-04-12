@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: quantum_machine_learning.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: unsrt.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+You've used 43 entries,
+            1791 wiz_defined-function locations,
+            735 strings with 14160 characters,
+and the built_in function-call counts, 11866 in all, are:
+= -- 896
+> -- 842
+< -- 5
++ -- 297
+- -- 254
+* -- 965
+:= -- 1970
+add.period$ -- 130
+call.type$ -- 43
+change.case$ -- 42
+chr.to.int$ -- 0
+cite$ -- 43
+duplicate$ -- 438
+empty$ -- 999
+format.name$ -- 254
+if$ -- 2566
+int.to.chr$ -- 0
+int.to.str$ -- 43
+missing$ -- 37
+newline$ -- 217
+num.names$ -- 44
+pop$ -- 113
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 229
+stack$ -- 0
+substring$ -- 728
+swap$ -- 112
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 82
+width$ -- 45
+write$ -- 466
