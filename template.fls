@@ -1,6 +1,6 @@
-PWD /home/rolando/Downloads/Yachay/8th Semester/quantum_info/project/qml_classification/qml_classification
+PWD /home/rolando/Downloads/Yachay/8th_Semester/quantum_info/project/qml_classification/qml_classification
 INPUT /home/rolando/.miktex/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt
-INPUT /home/rolando/Downloads/Yachay/8th Semester/quantum_info/project/qml_classification/qml_classification/template.tex
+INPUT /home/rolando/Downloads/Yachay/8th_Semester/quantum_info/project/qml_classification/qml_classification/template.tex
 OUTPUT template.log
 INPUT /usr/local/share/miktex-texmf/tex/latex/base/article.cls
 INPUT /usr/local/share/miktex-texmf/tex/latex/base/article.cls
@@ -158,10 +158,10 @@ INPUT ./template.out
 INPUT ./template.out
 INPUT template.out
 INPUT template.out
+OUTPUT template.pdf
 INPUT ./template.out
 INPUT ./template.out
 OUTPUT template.out
-OUTPUT template.pdf
 INPUT /home/rolando/.miktex/texmfs/install/tex/latex/microtype/mt-ptm.cfg
 INPUT /home/rolando/.miktex/texmfs/install/tex/latex/microtype/mt-ptm.cfg
 INPUT /home/rolando/.miktex/texmfs/install/tex/latex/microtype/mt-ptm.cfg
@@ -204,6 +204,8 @@ INPUT /usr/local/share/miktex-texmf/fonts/tfm/jknappen/ec/ectt1000.tfm
 INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmr8t.tfm
 INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmb8t.tfm
 INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmbc8t.tfm
+INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmri8t.tfm
+INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmbi8t.tfm
 INPUT /usr/local/share/miktex-texmf/fonts/vf/adobe/times/ptmrc8t.vf
 INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmr8r.tfm
@@ -216,6 +218,10 @@ INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/share/miktex-texmf/fonts/vf/adobe/times/ptmbc8t.vf
 INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmb8r.tfm
+INPUT /usr/local/share/miktex-texmf/fonts/vf/adobe/times/ptmri8t.vf
+INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmri8r.tfm
+INPUT /usr/local/share/miktex-texmf/fonts/vf/adobe/times/ptmbi8t.vf
+INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmbi8r.tfm
 INPUT /usr/local/share/miktex-texmf/fonts/vf/adobe/times/ptmb8t.vf
 INPUT ./figures/QMLtypes.png
 INPUT ./figures/QMLtypes.png
@@ -226,8 +232,6 @@ INPUT ./figures/QMLtypes.png
 INPUT ./figures/QMLtypes.png
 INPUT /usr/local/share/miktex-texmf/fonts/vf/adobe/times/ptmrc8t.vf
 INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmr8r.tfm
-INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmr8t.tfm
-INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmb8t.tfm
 INPUT ./figures/Overview QML.png
 INPUT ./figures/Overview QML.png
 INPUT ./figures/Overview QML.png
@@ -235,10 +239,6 @@ INPUT ./figures/Overview QML.png
 INPUT ./figures/Overview QML.png
 INPUT ./figures/Overview QML.png
 INPUT ./figures/Overview QML.png
-INPUT /usr/local/share/miktex-texmf/fonts/vf/adobe/times/ptmb8t.vf
-INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmb8r.tfm
-INPUT /usr/local/share/miktex-texmf/fonts/vf/adobe/times/ptmr8t.vf
-INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT ./figures/swap.png
 INPUT ./figures/swap.png
 INPUT ./figures/swap.png
@@ -256,9 +256,6 @@ INPUT ./figures/nns.png
 INPUT ./template.bbl
 INPUT ./template.bbl
 INPUT template.bbl
-INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmri8t.tfm
-INPUT /usr/local/share/miktex-texmf/fonts/vf/adobe/times/ptmri8t.vf
-INPUT /usr/local/share/miktex-texmf/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT template.aux
 INPUT ./template.out
 INPUT ./template.out
@@ -286,6 +283,8 @@ INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/symbols/msbm10.p
 INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 INPUT /usr/local/share/miktex-texmf/fonts/type1/urw/times/utmb8a.pfb
 INPUT /usr/local/share/miktex-texmf/fonts/type1/urw/times/utmb8a.pfb
+INPUT /usr/local/share/miktex-texmf/fonts/type1/urw/times/utmbi8a.pfb
+INPUT /usr/local/share/miktex-texmf/fonts/type1/urw/times/utmbi8a.pfb
 INPUT /usr/local/share/miktex-texmf/fonts/type1/urw/times/utmr8a.pfb
 INPUT /usr/local/share/miktex-texmf/fonts/type1/urw/times/utmr8a.pfb
 INPUT /usr/local/share/miktex-texmf/fonts/type1/urw/times/utmri8a.pfb

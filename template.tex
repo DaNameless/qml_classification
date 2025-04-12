@@ -17,7 +17,6 @@
 \usepackage{geometry}   % Adjust page margins
 \usepackage{ragged2e}  
 
-
 \graphicspath{ {./images/} }
 \usepackage[english]{babel}
 \usepackage[square,numbers]{natbib}
@@ -53,15 +52,21 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-Classification is a key component of various scientific, technological and industrial domains, from biomedical diagnostics and computational materials science to finance, climate modeling, and sociology. However, classical machine learning (ML) approaches often face limitations in computational efficiency, especially for high-dimensional and complex datasets, where quantum computing has been proposed as a promising breakthrough. Quantum machine learning (QML) has recently attracted much interest, intending to leverage the potential of quantum computing to achieve computational advantages over classical methods. Notable quantum algorithms, such as the Harrow-Hassidim-Lloyd (HHL) solver for linear systems and Shor's algorithm for integer factorization, demonstrate exponential speedups for specific tasks, suggesting the potential of quantum computing to revolutionize the computational landscape. In this mini-review, we explore the current state of the art of quantum classification algorithms, focusing on quantum support vector machines (QSVMs) and Quantum Neural Networks (QNNs), their implementations using the Qiskit software framework and their performance. By critically evaluating their advantages and limitations, we evaluate whether QML represents a transformative paradigm or remains constrained by challenges in hardware, scalability, and decoherence. Finally, we will highlight the role of hybrid classical-quantum approaches and the advancements needed to realize quantum-enhanced classification in practical applications.
+Classification is a key component across scientific, technological and industrial domains, from biomedical diagnostics and computational materials science to finance, climate modeling, 
+and sociology. However, classical machine learning (ML) approaches often face limitations in computational efficiency, especially for high-dimensional and complex datasets, where quantum 
+computing has been proposed as a promising breakthrough.  Quantum machine learning (QML) aims to harness this power, with algorithms like the Harrow-Hassidim-Lloyd (HHL) solver and 
+Shor's algorithm demonstrating exponential speedups in specialized cases. 
+In this mini-review, we explore the state of the art of quantum classification algorithms, focusing on quantum support vector machines (QSVMs) and Quantum Neural Networks (QNNs), 
+their implementations using the Qiskit software framework and their performance. By critically evaluating their advantages and limitations, we aim to answer the question:
+\textit{Can QML surpass classical methods, or do hardware limitations, decoherence, and scalability barriers constrain its potential?} 
+Finally, we will highlight some advancements needed to realize quantum-enhanced classification in practical applications.
 \end{abstract}
 
 % keywords can be removed
-%\keywords{Machine Learning \and Quantum Mechanics \and Quantum Machine Learning \and Classification} 
+\keywords{Machine Learning \and Quantum Mechanics \and Quantum Machine Learning \and Classification} 
 
-\section*{Introduction}
-
-Classification is probably the most essential component of any activity, regardless of whether it is for scientific purposes. 
+\section{Introduction}
+Classification is s a cornerstone of modern science and technology, regardless of whether it is for scientific purposes. 
 Its wide-ranging applications include finance \cite{SMAILOVIC2014181}, climate modelling \cite{gmd-16-6433-2023}, medical diagnostics \cite{doi:10.1148/rg.2017160130}, computational materials science \cite{LIU2017159}, sociology \cite{Franco2021} and human behaviour itself \cite{Richards2019}. 
 Data is categorized into distinct groups to generate precise predictive models through classification. 
 Typically, these issues are grouped into two primary categories: binary classification and multi-class classification. 
@@ -75,102 +80,63 @@ These algorithms are generally categorized into three main types: supervised, un
 
 Supervised learning relies on a labeled training dataset, where input-output relationships are clearly defined, allowing the algorithm to learn and classify new data based on these examples. 
 Unsupervised learning, on the other hand, aims to uncover hidden structures, clusters, or groupings within unlabeled data \cite{10047618}. 
-In both cases, the core task is pattern classification, which involves assigning new input data to predefined categories or classes.
+In both cases, the core task is pattern classification, which involves assigning new input data to predefined categories or classes. Reinforcement learning, which mimics aspects of human learning, 
+operates within a framework of rules and objectives. Here, the algorithm receives rewards or penalties based on the actions it takes to achieve a goal. Rewards reinforce successful strategies, 
+while penalties prompt adjustments to improve decision-making. While reinforcement learning is a powerful approach, this work will not focus on it.
 
-Reinforcement learning, which mimics aspects of human learning, operates within a framework of rules and objectives. 
-Here, the algorithm receives rewards or penalties based on the actions it takes to achieve a goal. 
-Rewards reinforce successful strategies, while penalties prompt adjustments to improve decision-making. 
-While reinforcement learning is a powerful approach, this work will not focus on it, as the primary application under review is classification.
-
-A significant challenge in ML is the computational time and storage required, especially when dealing with large datasets. 
+However, a significant challenge in ML is the computational time and storage required, especially when dealing with large datasets. 
 Additionally, training these models is time-intensive as the main challenges lie in the problem of finding the right parameters that lead to an optimal solution. 
 To address these limitations, researchers have turned to quantum computing as a promising alternative. 
 Quantum methods have the potential to significantly reduce both storage requirements and computational time, offering a new direction for overcoming the 
 constraints of classical approaches \cite{degruyterIntroductionQuantum}.
 
-The most noticeable advantage of quantum computing is the ability of manipulate quantum states in superposition in order to speed up computational tasks in terms 
-of complexity, as these operations would be executed on many states at the same time. In a formal way, quantum computers surpass classical ones by using qubits, 
-which exist in an exponentially larger space, $\mathbb{SU}(2^n)$, compared to classical bits in Boolean space, $\mathbb{B}^{\tens{} n} $. 
-While an n-bit classical register holds one n-digit binary string, a quantum register of the same size can represent all possible strings simultaneously, 
-offering an exponential advantage \cite{Nielsen_Chuang_2010}. Then, quantum algorithms are developed such that the modified quantum state has a high amplitude 
+Over the last decades, scientists have applied quantum computing in diverse areas such as cryptography \cite{Broadbent2015} and communication \cite{Farouk2018}, This growing interest stems from the remarkable 
+capabilities in solving complex problems. For example, factorization through Shor's algorithm \cite{Shor2006} and searching unstructured databases using Grover's algorithm \cite{Grover1996}. The most 
+noticeable advantage of quantum computing is the ability of manipulate quantum states in superposition in order to speed up computational tasks in terms of complexity, as these operations would be 
+executed on many states at the same time. In a formal way, quantum computers surpass classical ones by using qubits, which exist in an exponentially larger space, $\mathbb{SU}(2^n)$, compared to 
+classical bits in Boolean space, $\mathbb{B}^{\tens{} n} $. While an n-bit classical register holds one n-digit binary string, a quantum register of the same size can represent all possible strings 
+simultaneously, offering an exponential advantage \cite{Nielsen_Chuang_2010}. Then, quantum algorithms are developed such that the modified quantum state has a high amplitude 
 for states representing solutions for a given problem. 
 However, while quantum supremacy has been demonstrated for specific problems \cite{Arute2019}, achieving it in data science remains uncertain, even theoretically. 
 Nonetheless, this is a key objective in QML.
 
-Usually, QML is considered for four main tasks as shown in Fig.\ref{fig:qtasks}, where CC tasks refers to classical computers using quantum computing inspired 
+Usually, QML tasks can be categorized into four approaches, as shown in Fig. \ref{fig:qtasks}, where CC tasks refers to classical computers using quantum computing inspired 
 algorithms to process classical data, such as recommendation system algorithms \cite{ccalg}. CQ refers to processing classical data using QML algorithms \cite{cq}. 
 QC setting asks how classical learning techniques may help in quantum tasks and this is an active area of investigation, with classical machine learning 
 algorithms used in many areas in the quantum computing, such as qubit characterization \cite{charqc}, control \cite{controlqc} and readout\cite{readoutqc}. 
 Finally, QQ, a field remaining in its early stages, involves the processing of quantum data with quantum machine learning algorithms, 
 for instance, analyzing molecular ground state energy directly in quantum computers using QML to optimize processes.
 
-\begin{figure}[h!]
+\begin{figure}[ht]
     \centering
-    \includegraphics[scale=0.19]{figures/QMLtypes.png}
+    \includegraphics[scale=0.17]{figures/QMLtypes.png}
     \caption{QML tasks from different perspectives. a) QC. b) CC. c) QQ. d) CQ. }
     \label{fig:qtasks}
 \end{figure}
 
-In this work, we provide a comprehensive review of the current state of quantum classification algorithms, specifically emphasizing the implementation of QSVMs 
-and QNNs. 
-We critically assess the potential of these algorithms to revolutionize classification tasks in practical applications by evaluating their advantages and limitations. 
-This work aims to determine whether QML is a transformative paradigm or if existing technological challenges still constrain it by analyzing the interaction between 
-quantum computing and machine learning. In Table \ref{tab:qml_methods} and Figure \ref{fig:overview} we provide an overview of the topics covered in this work, as well as the relevant literature reviewed. 
+There are numerous academic contributions on ML tasks using quantum computing. There are proposals to develop entire quantum algorithms to solve pattern recognition \cite{Andrecut1998, Schtzhold2003}.
+On the other hand, some authors explored running ML classification algorithms in a quantum computer expecting lower excution times \cite{Wiebe2014, Rebentrost2014}. Some other experts have tried to develop 
+versions of quantum neural networks for classification to help in different fields \cite{G2007, SchuldMaria2014, farhi2018classificationquantumneuralnetworks, Mathur2021, Sebastianelli2022, Liu2024}.
+Although interest in the field is rapidly increasing, a complete theoretical framework for quantum learning—understanding how quantum information can fundamentally be used for intelligent computing—is still in its 
+early stages of development. In the area of QML, the short-term objective is to demonstrate quantum advantage over classical approaches in a data science context. 
+To reach this improvement, it's essential to remain open to the types of applications that could gain the most from QML, which might include problems that are naturally quantum in nature. 
+Additionally, it's important to study how QML techniques perform as problem sizes grow, including factors like trainability (such as how gradients scale) and prediction accuracy.
 
+While prior surveys and reviews \cite{Schuld2015, Cerezo2023, Su2023, Biamonte2017} establish foundational QML principles, and empirical studies benchmark isolated algorithms, this work uniquely focuses on classification 
+tasks. We evaluate whether quantum classification algorithms can overcome the limitations of classical ML or if they remain hindered by hardware constraints and 
+theoretical challenges. We structure our review as follows: \textbf{Section 2} provides an in-depth analysis of quantum classification algorithms, including Quantum k-nearest neighbours
+Quantum Neural Networks, Quantum Support Vector Machines, and Quantum-enhanced Decision Trees (Figure \ref{fig:overview}). \textbf{Section 3} discusses key barriers such as noise, 
+scalability, and error correction. Finally, \textbf{Section 4} concludes with a forward-looking  perspective on the feasibility of quantum advantage in real-world classification tasks.
 
-\begin{table}[ht]
-  \centering
-  \scriptsize  % Reduce font size to fit table (remove if unwanted)
-  \caption{Overview of quantum machine learning classification methods}
-  \label{tab:qml_methods}
-  \begin{tabular}{@{}>{\RaggedRight}p{2.5cm}>{\RaggedRight}p{3cm}>{\RaggedRight}p{3cm}>{\RaggedRight}p{2cm}>{\RaggedRight}p{2cm}@{}}
-  \toprule
-  \textbf{Method} & \textbf{Key Idea} & \textbf{Algorithm} & \textbf{Hardware} & \textbf{References}\\
-  \midrule
-  Quantum k-Nearest Neighbors (QkNN) & 
-  Quantum state overlap for distance metrics & 
-  Grover-based search, State fidelity & 
-  Gate-based & \\ 
-  \addlinespace
-  
-  Quantum Neural Networks (QNNs) & 
-  Parametrized quantum circuits as classifiers & 
-  Variational circuits, Backpropagation & 
-  NISQ devices & \\ 
-  \addlinespace
-  
-  Quantum Decision Trees & 
-  Superposition for parallel split evaluation & 
-  Amplitude amplification & 
-  Gate-based/Annealing &
-  \\ 
-  \addlinespace
-  
-  Quantum SVM (QSVM) & 
-  Quantum kernels for high-dim spaces & 
-  HHL algorithm, Kernel estimation & 
-  Gate-based + QRAM & 
-  \\ 
-  \addlinespace
-  
-  Variational Quantum Classifiers (VQC) & 
-  Hybrid quantum-classical optimization & 
-  Parameter optimization loops & 
-  NISQ devices &
-  \\ 
-  \bottomrule
-  \end{tabular}
-  \end{table}
-
-  \begin{figure}[h!]
+  \begin{figure}[ht]
     \centering
-    \includegraphics[scale=0.3]{"figures/Overview QML.png"}
+    \includegraphics[scale=0.26]{"figures/Overview QML.png"}
     \caption{Overview of quantum machine learning classification methods}
     \label{fig:overview}
   \end{figure}
 
-\section*{Quantum Classification Algorithms}
-\subsection*{Quantum k-nearest neighbours}
+\section{Quantum Classification Algorithms}
+\subsection{Quantum k-nearest neighbours}
 The classical k-nearest neighbours algorithm assigns a class to an unclassified object by comparing its vector $\vec{v}$ to previously classified training samples. This is done using a distance metric, typically Euclidean or Hamming distance, to identify the k-nearest neighbours in the multidimensional space. The steps of the algorithm can be summarized as follows:
 
 \begin{enumerate}
@@ -205,7 +171,7 @@ performing a projection on the ancilla alone. The probability of measuring the i
     \label{eq:3}
 \end{equation}
 
-\begin{figure}[h!]
+\begin{figure}[ht]
   \centering
   \includegraphics[scale=0.15]{figures/swap.png}
   \caption{Swap Circuit}
@@ -221,7 +187,7 @@ Classical neural networks (NNs) are computational models inspired by biological 
 
 The operational workflow of a common QNN involves the stages shown in Fig. \ref{fig:qnn1}. First, classical input data is encoded into a quantum state using a feature map \cite{kwon2024featuremapquantumdata}, initializing the qubit register. Next, a variational circuit transforms this initial encoded quantum state across multiple layers. The final quantum state is then measured by evaluating the expectation value of a Hamiltonian operator, typically represented by Pauli gates \cite{farhi2018classificationquantumneuralnetworks}. These quantum measurements are decoded into classical outputs, which are used to compute the loss function. The variational parameters are optimized to minimize this loss, analogous to classical training but within a quantum computational framework. This hybrid structure positions QNNs at the intersection of classical deep learning and parameterized quantum circuits, offering potential advantages in certain machine learning tasks while remaining subject to ongoing research and design refinements. \cite{qiskittheory}.
 
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
     \includegraphics[scale=0.15]{figures/nns.png}
     \caption{a) Main components of classical neural networks. b) Components in proposed QNN}
@@ -242,9 +208,8 @@ sizes due to qubit counts and error rates. As quantum hardware advances, it is e
 challenges such as error mitigation, circuit depth limitations, and optimal entanglement strategies must first be addressed.
 
 
-\subsection*{Quantum Decision Trees (QDTs)}
-
-
+\subsection*{Quantum Suport Vector Machines (QSVMs)}
+In progress...
 
 
 \begin{comment}
