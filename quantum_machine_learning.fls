@@ -253,6 +253,13 @@ INPUT ./figures/nns.png
 INPUT ./figures/nns.png
 INPUT ./figures/nns.png
 INPUT ./figures/nns.png
+INPUT ./figures/qsvm.png
+INPUT ./figures/qsvm.png
+INPUT ./figures/qsvm.png
+INPUT ./figures/qsvm.png
+INPUT ./figures/qsvm.png
+INPUT ./figures/qsvm.png
+INPUT ./figures/qsvm.png
 INPUT ./quantum_machine_learning.bbl
 INPUT ./quantum_machine_learning.bbl
 INPUT quantum_machine_learning.bbl
@@ -261,6 +268,8 @@ INPUT ./quantum_machine_learning.out
 INPUT ./quantum_machine_learning.out
 INPUT /home/rolando/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1000.pk
 INPUT /home/rolando/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1000.pk
+INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cmextra/cmex7.pfb
 INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cmextra/cmex7.pfb
 INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi10.pfb

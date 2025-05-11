@@ -275,4 +275,74 @@ Dong Yumin, Mingqiu Wu, and Jinlei Zhang.
   network.
 \newblock {\em IEEE Access}, 8:224500--224512, 2020.
 
+\bibitem{Vapnik2000}
+Vladimir~N. Vapnik.
+\newblock The nature of statistical learning theory.
+\newblock {\em The Nature of Statistical Learning Theory}, 2000.
+
+\bibitem{Zeguendry2023}
+Amine Zeguendry, Zahi Jarir, and Mohamed Quafafou.
+\newblock Quantum machine learning: A review and case studies.
+\newblock {\em Entropy 2023, Vol. 25, Page 287}, 25:287, 2 2023.
+
+\bibitem{Drr1999}
+Christoph Dürr and Peter Høyer.
+\newblock A quantum algorithm for finding the minimum *.
+\newblock 1999.
+
+\bibitem{Thanasilp2022}
+Supanut Thanasilp, Samson Wang, M.~Cerezo, and Zoë Holmes.
+\newblock Exponential concentration in quantum kernel methods.
+\newblock 8 2022.
+
+\bibitem{Akrom2024}
+Muhamad Akrom.
+\newblock Quantum support vector machine for classification task: A review.
+\newblock {\em Journal of Multiscale Materials Informatics}, 1:1--8, 10 2024.
+
+\bibitem{Srikumar2021}
+Maiyuren Srikumar, Charles~D. Hill, and Lloyd~C.L. Hollenberg.
+\newblock Clustering and enhanced classification using a hybrid quantum
+  autoencoder.
+\newblock {\em Quantum Science and Technology}, 7:015020, 12 2021.
+
+\bibitem{Konar2022}
+Debanjan Konar, Siddhartha Bhattacharyya, Bijaya~K. Panigrahi, and Elizabeth~C.
+  Behrman.
+\newblock Qutrit-inspired fully self-supervised shallow quantum learning
+  network for brain tumor segmentation.
+\newblock {\em IEEE Transactions on Neural Networks and Learning Systems},
+  33:6331--6345, 11 2022.
+
+\bibitem{bhattacharjee2024classificationfinancialdatausing}
+Seemanta Bhattacharjee, MD.~Muhtasim Fuad, and A.~K. M.~Fakhrul Hossain.
+\newblock Classification of financial data using quantum support vector
+  machine, 2024.
+
+\bibitem{Rosyid2024}
+Muhammad~Reesa Rosyid, Lubna Mawaddah, Akbar~Priyo Santosa, Muhamad Akrom,
+  Supriadi Rustad, and Hermawan~Kresno Dipojono.
+\newblock Implementation of quantum machine learning in predicting corrosion
+  inhibition efficiency of expired drugs.
+\newblock {\em Materials Today Communications}, 40:109830, 8 2024.
+
+\bibitem{Ozpolat2023}
+Zeynep Ozpolat and Murat Karabatak.
+\newblock Performance evaluation of quantum-based machine learning algorithms
+  for cardiac arrhythmia classification.
+\newblock {\em Diagnostics (Basel, Switzerland)}, 13, 3 2023.
+
+\bibitem{Nadim_2025}
+Md~Nadim, Mohammad Hassan, Ashis~Kumar Mandal, Chanchal~K. Roy, Banani Roy, and
+  Kevin~A. Schneider.
+\newblock Comparative analysis of quantum and classical support vector
+  classifiers for software bug prediction: an exploratory study.
+\newblock {\em Quantum Machine Intelligence}, 7(1), March 2025.
+
+\bibitem{Ethem2020}
+Alpaydin; Ethem.
+\newblock Introduction to machine learning in adaptive computation and machine
+  learning series.
+\newblock {\em Massachusetts Institute of Technology}, page 712, 2020.
+
 \end{thebibliography}

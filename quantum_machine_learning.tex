@@ -51,10 +51,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-Classification is a key component across scientific, technological and industrial domains, from biomedical diagnostics and computational materials science to finance, climate modeling, 
-and sociology. However, classical machine learning (ML) approaches often face limitations in computational efficiency, especially for high-dimensional and complex datasets, where quantum 
-computing has been proposed as a promising breakthrough.  Quantum machine learning (QML) aims to harness this power, with algorithms like the Harrow-Hassidim-Lloyd (HHL) solver and 
-Shor's algorithm demonstrating exponential speedups in specialized cases. 
+Classification is a key component across scientific, technological and industrial domains, from biomedical diagnostics and computational materials science to finance, climate modeling and sociology. However, classical machine learning (ML) approaches often face limitations in computational efficiency, especially for high-dimensional and complex datasets, where quantum computing has been proposed as a promising breakthrough.  Quantum machine learning (QML) aims to harness this power, with algorithms like the Harrow-Hassidim-Lloyd (HHL) solver and Shor's algorithm demonstrating exponential speedups in specialized cases. 
 In this mini-review, we explore the state of the art of quantum classification algorithms, focusing on quantum support vector machines (QSVMs) and Quantum Neural Networks (QNNs), 
 their implementations using the Qiskit software framework and their performance. By critically evaluating their advantages and limitations, we aim to answer the question:
 \textit{Can QML surpass classical methods, or do hardware limitations, decoherence, and scalability barriers constrain its potential?} 
@@ -65,46 +62,25 @@ Finally, we will highlight some advancements needed to realize quantum-enhanced 
 \keywords{Machine Learning \and Quantum Mechanics \and Quantum Machine Learning \and Classification} 
 
 \section{Introduction}
-Classification is s a cornerstone of modern science and technology, regardless of whether it is for scientific purposes. 
-Its wide-ranging applications include finance \cite{SMAILOVIC2014181}, climate modelling \cite{gmd-16-6433-2023}, medical diagnostics \cite{doi:10.1148/rg.2017160130}, computational materials science \cite{LIU2017159}, sociology \cite{Franco2021} and human behaviour itself \cite{Richards2019}. 
-Data is categorized into distinct groups to generate precise predictive models through classification. 
-Typically, these issues are grouped into two primary categories: binary classification and multi-class classification. 
-The binary classification process entails dividing data into two categories, such as identifying spam versus non-spam emails or differentiating between 
-cancerous and non-cancerous tissues in medical diagnosis.
-In contrast, multi-classification encompasses additional categories, such as identifying skin lesion types associated with cancerous conditions \cite{10613907}.
+Classification is s a cornerstone of modern science and technology, regardless of whether it is for scientific purposes. Its wide-ranging applications include finance \cite{SMAILOVIC2014181}, climate modelling \cite{gmd-16-6433-2023}, medical diagnostics \cite{doi:10.1148/rg.2017160130}, computational materials science \cite{LIU2017159}, sociology \cite{Franco2021} and human behaviour itself \cite{Richards2019}. Data is categorized into distinct groups to generate precise predictive models through classification. 
+Typically, these issues are grouped into two primary categories: binary classification and multi-class classification. The binary classification process entails dividing data into two categories, such as identifying spam versus non-spam emails or differentiating between 
+cancerous and non-cancerous tissues in medical diagnosis. In contrast, multi-classification encompasses additional categories, such as identifying skin lesion types associated with cancerous conditions \cite{10613907}.
 
-ML is a branch of computer science focused on identifying patterns in data attributes to make predictions about previously unseen inputs. 
-It involves creating algorithms that enable computers to learn from data and make decisions autonomously, without being explicitly programmed for specific tasks. 
-These algorithms are generally categorized into three main types: supervised, unsupervised, and reinforcement learning \cite{Ayodele10}.
+Machine Learning (ML) is a branch of computer science focused on identifying patterns in data attributes to make predictions about previously unseen inputs. It involves creating algorithms that enable computers to learn from data and make decisions autonomously, without being explicitly programmed for specific tasks. These algorithms are generally categorized into three main types: supervised, unsupervised, and reinforcement learning \cite{Ayodele10}.
 
-Supervised learning relies on a labeled training dataset, where input-output relationships are clearly defined, allowing the algorithm to learn and classify new data based on these examples. 
-Unsupervised learning, on the other hand, aims to uncover hidden structures, clusters, or groupings within unlabeled data \cite{10047618}. 
-In both cases, the core task is pattern classification, which involves assigning new input data to predefined categories or classes. Reinforcement learning, which mimics aspects of human learning, 
-operates within a framework of rules and objectives. Here, the algorithm receives rewards or penalties based on the actions it takes to achieve a goal. Rewards reinforce successful strategies, 
-while penalties prompt adjustments to improve decision-making. While reinforcement learning is a powerful approach, this work will not focus on it.
+Supervised learning relies on a labeled training dataset, where input-output relationships are clearly defined, allowing the algorithm to learn and classify new data based on the training data. Unsupervised learning, on the other hand, aims to uncover hidden structures, clusters, or groupings within unlabeled data \cite{10047618}. In both cases, the core task is pattern classification, which involves assigning new input data to predefined categories or classes. Reinforcement learning, which mimics aspects of human learning, operates within a framework of rules and objectives. Here, the algorithm receives rewards or penalties based on the actions it takes to achieve a goal. Rewards reinforce successful strategies, while penalties prompt adjustments to improve decision-making. While reinforcement learning is a powerful approach, we will not focus on it herein.
 
-However, a significant challenge in ML is the computational time and storage required, especially when dealing with large datasets. 
-Additionally, training these models is time-intensive as the main challenges lie in the problem of finding the right parameters that lead to an optimal solution. 
-To address these limitations, researchers have turned to quantum computing as a promising alternative. 
-Quantum methods have the potential to significantly reduce both storage requirements and computational time, offering a new direction for overcoming the 
-constraints of classical approaches \cite{degruyterIntroductionQuantum}.
+However, a significant challenge in ML is the computational time and storage required, especially when dealing with large datasets. Additionally, training these models is time-intensive as the main challenges lie in the problem of finding the right parameters that lead to an optimal solution. To address these limitations, researchers have turned to quantum computing as a promising alternative. Quantum methods have the potential to significantly reduce both storage requirements and computational time, offering a new direction for overcoming the constraints of classical approaches \cite{degruyterIntroductionQuantum}.
 
-Over the last decades, scientists have applied quantum computing in diverse areas such as cryptography \cite{Broadbent2015} and communication \cite{Farouk2018}, This growing interest stems from the remarkable 
-capabilities in solving complex problems. For example, factorization through Shor's algorithm \cite{Shor2006} and searching unstructured databases using Grover's algorithm \cite{Grover1996}. The most 
-noticeable advantage of quantum computing is the ability of manipulate quantum states in superposition in order to speed up computational tasks in terms of complexity, as these operations would be 
-executed on many states at the same time. In a formal way, quantum computers surpass classical ones by using qubits, which exist in an exponentially larger space, $\mathbb{SU}(2^n)$, compared to 
-classical bits in Boolean space, $\mathbb{B}^{\tens{} n} $. While an n-bit classical register holds one n-digit binary string, a quantum register of the same size can represent all possible strings 
-simultaneously, offering an exponential advantage \cite{Nielsen_Chuang_2010}. Then, quantum algorithms are developed such that the modified quantum state has a high amplitude 
-for states representing solutions for a given problem. 
-However, while quantum supremacy has been demonstrated for specific problems \cite{Arute2019}, achieving it in data science remains uncertain, even theoretically. 
-Nonetheless, this is a key objective in QML.
+Over the last decades, scientists have applied quantum computing in diverse areas such as cryptography \cite{Broadbent2015} and communication \cite{Farouk2018}, This growing interest stems from the remarkable capabilities in solving complex problems. For example, factorization through Shor's algorithm \cite{Shor2006} and searching unstructured databases using Grover's algorithm \cite{Grover1996}. The most 
+noticeable advantage of quantum computing is the ability of manipulate quantum states in superposition in order to speed up computational tasks in terms of complexity, as these operations would be executed on many states at the same time. In a formal way, quantum computers surpass classical ones by using qubits, which exist in an exponentially larger space, $\mathbb{SU}(2^n)$, compared to classical bits in Boolean space, $\mathbb{B}^{\tens{} n} $. While an $n$-bit classical register holds one $n$-digit binary string, a quantum register of the same size can represent all possible strings simultaneously, offering an exponential advantage \cite{Nielsen_Chuang_2010}. Quantum algorithms are developed such that the modified quantum state has a high amplitude for states representing solutions for a given problem. However, while quantum supremacy has been demonstrated for specific problems \cite{Arute2019}, achieving it in data science remains uncertain, even theoretically. 
+Nonetheless, this is a key objective in Quantum Machine Learning (QML).
 
 Usually, QML tasks can be categorized into four approaches, as shown in Fig. \ref{fig:qtasks}, where CC tasks refers to classical computers using quantum computing inspired 
 algorithms to process classical data, such as recommendation system algorithms \cite{ccalg}. CQ refers to processing classical data using QML algorithms \cite{cq}. 
 QC setting asks how classical learning techniques may help in quantum tasks and this is an active area of investigation, with classical machine learning 
 algorithms used in many areas in the quantum computing, such as qubit characterization \cite{charqc}, control \cite{controlqc} and readout\cite{readoutqc}. 
-Finally, QQ, a field remaining in its early stages, involves the processing of quantum data with quantum machine learning algorithms, 
-for instance, analyzing molecular ground state energy directly in quantum computers using QML to optimize processes.
+Finally, QQ, a field remaining in the early stages, involves the processing of quantum data with quantum machine learning algorithms, for instance, analyzing molecular ground state energy directly in quantum computers using QML to optimize processes.
 
 \begin{figure}[ht]
     \centering
@@ -113,23 +89,16 @@ for instance, analyzing molecular ground state energy directly in quantum comput
     \label{fig:qtasks}
 \end{figure}
 
-There are numerous academic contributions on ML tasks using quantum computing. There are proposals to develop entire quantum algorithms to solve pattern recognition \cite{Andrecut1998, Schtzhold2003}.
-On the other hand, some authors explored running ML classification algorithms in a quantum computer expecting lower excution times \cite{Wiebe2014, Rebentrost2014}. Some other experts have tried to develop 
-versions of quantum neural networks for classification to help in different fields \cite{G2007, SchuldMaria2014, farhi2018classificationquantumneuralnetworks, Mathur2021, Sebastianelli2022, Liu2024}.
-Although interest in the field is rapidly increasing, a complete theoretical framework for quantum learning—understanding how quantum information can fundamentally be used for intelligent computing—is still in its 
+There are numerous academic contributions on ML tasks using quantum computing. For example, some scientists had proposals to develop entire quantum algorithms to solve pattern recognition \cite{Andrecut1998, Schtzhold2003}.In contrast, some authors explored running ML classification algorithms in a quantum computer expecting lower excution times \cite{Wiebe2014, Rebentrost2014}. Some other experts have tried to develop 
+versions of quantum neural networks for classification to help in different fields \cite{G2007, SchuldMaria2014, farhi2018classificationquantumneuralnetworks, Mathur2021, Sebastianelli2022, Liu2024}. Although interest in the field is rapidly increasing, a complete theoretical framework for quantum learning—understanding how quantum information can fundamentally be used for intelligent computing—is still in its 
 early stages of development. In the area of QML, the short-term objective is to demonstrate quantum advantage over classical approaches in a data science context. 
-To reach this improvement, it's essential to remain open to the types of applications that could gain the most from QML, which might include problems that are naturally quantum in nature. 
-Additionally, it's important to study how QML techniques perform as problem sizes grow, including factors like trainability (such as how gradients scale) and prediction accuracy.
+To reach this improvement, it is essential to remain open to the types of applications that could gain the most from QML, which might include problems that are naturally quantum in nature. Additionally, it is important to study how QML techniques perform as problem sizes grow, including factors like trainability (such as how gradients scale) and prediction accuracy.
 
-While prior surveys and reviews \cite{Schuld2015, Cerezo2023, Su2023, Biamonte2017} establish foundational QML principles, and empirical studies benchmark isolated algorithms, this work uniquely focuses on classification 
-tasks. We evaluate whether quantum classification algorithms can overcome the limitations of classical ML or if they remain hindered by hardware constraints and 
-theoretical challenges. We structure our review as follows: \textbf{Section 2} provides an in-depth analysis of quantum classification algorithms, including Quantum k-nearest neighbours
-Quantum Neural Networks, Quantum Support Vector Machines, and Quantum-enhanced Decision Trees (Figure \ref{fig:overview}). \textbf{Section 3} discusses key barriers such as noise, 
-scalability, and error correction. Finally, \textbf{Section 4} concludes with a forward-looking  perspective on the feasibility of quantum advantage in real-world classification tasks.
+While prior surveys and reviews \cite{Schuld2015, Cerezo2023, Su2023, Biamonte2017} establish foundational QML principles, and empirical studies benchmark isolated algorithms, this work uniquely focuses on classification tasks. We evaluate whether quantum classification algorithms can overcome the limitations of classical ML or if they remain hindered by hardware constraints and theoretical challenges. We structure our review as follows: \textbf{Section 2} provides an in-depth analysis of quantum classification algorithms, including Quantum k-nearest neighbours Quantum Neural Networks, Quantum Support Vector Machines, and Quantum-enhanced Decision Trees (Figure \ref{fig:overview}). \textbf{Section 3} discusses key barriers such as noise, scalability, and error correction. Finally, \textbf{Section 4} concludes with a forward-looking  perspective on the feasibility of quantum advantage in real-world classification tasks.
 
   \begin{figure}[ht]
     \centering
-    \includegraphics[scale=0.26]{"figures/Overview QML.png"}
+    \includegraphics[scale=0.23]{"figures/Overview QML.png"}
     \caption{Overview of quantum machine learning classification methods}
     \label{fig:overview}
   \end{figure}
@@ -144,13 +113,10 @@ The classical k-nearest neighbours algorithm assigns a class to an unclassified 
     \item Assign the class with the highest frequency among the $k$ nearest samples to the object $\vec{v}$.
 \end{enumerate}
 
-This approach relies on the assumption that objects close to each other in the multidimensional space share similar properties. Now, the most expensive step in these algorithms is determining the distance between
-the test sample and the train states and by the aforementioned properties of quantum computing, this task is a good instance to use QML.
-Translating this concept into a quantum framework requires redefining distance metrics in quantum terms and consider the fidelity or overlap
-$|\braket{x|y}|$ as a measure of similarity between states. 
+This approach relies on the assumption that objects close to each other in the multidimensional space share similar properties. Now, the most expensive step in these algorithms is determining the distance between the test sample and the train states and by the aforementioned properties of quantum computing, this task is a good instance to use QML.
+Translating this concept into a quantum framework requires redefining distance metrics in quantum terms and consider the fidelity or overlap $|\braket{x|y}|$ as a measure of similarity between states. 
 
-Then, building on the data representation proposed by Lloyd et al. \cite{Lloyd2013}, as shown in Eq. \ref{eq:1}, to evaluate the distance from a given $\vec{x} \in \mathbb{R}^N$ to the centroid of a given set $V_j$, $\vec{y_j}$, one can calculate the inner product of the state $\ket{\psi} = \frac{\sqrt{2}}{2} (\ket{0, x} + \ket{1,y_j})$, constructed for the system qubits and an adjoined ancilla, 
-with the state $\ket{\phi} = \frac{\sqrt{Z}}{Z}(|\vec{x}|\ket{0} - |\vec{y_j}|\ket{1})$, where $Z = |\vec{x}|^2 + |\vec{y_j}|^2$ ensures normalization. This leads to the identity in Eq. \ref{eq:2}, which provides a way to compute the distance between the vectors.
+Then, building on the data representation proposed by Lloyd et al. \cite{Lloyd2013}, as shown in Eq. \ref{eq:1}, to evaluate the distance from a given $\vec{x} \in \mathbb{R}^N$ to the centroid of a given set $V_j$, $\vec{y_j}$, one can calculate the inner product of the state $\ket{\psi} = \frac{\sqrt{2}}{2} (\ket{0, x} + \ket{1,y_j})$, constructed for the system qubits and an adjoined ancilla, with the state $\ket{\phi} = \frac{\sqrt{Z}}{Z}(|\vec{x}|\ket{0} - |\vec{y_j}|\ket{1})$, where $Z = |\vec{x}|^2 + |\vec{y_j}|^2$ ensures normalization. This leads to the identity in Eq. \ref{eq:2}, which provides a way to compute the distance between the vectors.
 
 \begin{equation}
     \ket{x} = |x|^{-\frac{1}{2}} \vec{x}
@@ -162,8 +128,7 @@ with the state $\ket{\phi} = \frac{\sqrt{Z}}{Z}(|\vec{x}|\ket{0} - |\vec{y_j}|\k
     \label{eq:2}
 \end{equation}
 
-The overlap $|\braket{\psi | \phi}|^2$ in Eq. \ref{eq:2} can be physically retrieved using a routine known as the swap test \cite{swaptest} show in Figure \ref{fig:swap}, 
-performing a projection on the ancilla alone. The probability of measuring the initial state $\ket{\xi}=\ket{x, y_j, 0_{anc}}$ in this test is given by Eq. \ref{eq:3}, where the overlap appears explicitly.
+The overlap $|\braket{\psi | \phi}|^2$ in Eq. \ref{eq:2} can be physically retrieved using a routine known as the swap test \cite{swaptest} show in Fig. \ref{fig:swap}, performing a projection on the ancilla alone. The probability of measuring the initial state $\ket{\xi}=\ket{x, y_j, 0_{anc}}$ in this test is given by Eq. \ref{eq:3}, where the overlap appears explicitly.
 
 \begin{equation}
     P(\ket{\xi}) = \frac{1 + |\braket{\psi | \phi}|^2}{2}
@@ -172,14 +137,12 @@ performing a projection on the ancilla alone. The probability of measuring the i
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[scale=0.15]{figures/swap.png}
+  \includegraphics[scale=0.2]{figures/swap.png}
   \caption{Swap Circuit}
   \label{fig:swap}
 \end{figure}
 
-The authors argue that this quantum method, including the construction of quantum states, achieves greater efficiency than the classical polynomial runtime while preserving quantum coherence during the state creation.
-Using these principles, a quantum version of the nearest centroid algorithm can be constructed. Here, $\vec{x}$ represents the sample to be classified, and $\vec{y_j} = \frac{\sum_p \vec{v}^p_j}{N_j}$ is the centroid of the given class $V_j$. 
-
+The authors argue that this quantum method, including the construction of quantum states, achieves greater efficiency than the classical polynomial runtime while preserving quantum coherence during the state creation. Using these principles, a quantum version of the nearest centroid algorithm can be constructed. Here, $\vec{x}$ represents the sample to be classified, and $\vec{y_j} = \frac{\sum_p \vec{v}^p_j}{N_j}$ is the centroid of the given class $V_j$. 
 
 \subsection*{Quantum Neural Networks (QNNs)}
 Classical neural networks (NNs) are computational models inspired by biological neurons, processing input data through layered architectures of interconnected nodes to produce a desired classification output. As illustrated in Fig. \ref{fig:qnn1}, these models adjust their parameters via backpropagation to minimize a predefined loss function, optimizing their predictive performance through iterative training. On the other hand, QNNs are a specialized subclass of variational quantum algorithms, implemented using parameterized quantum circuits. These circuits employ tunable unitary rotation gates and entangling operations to perform numerical tasks such as optimization, approximation, and classification \cite{kwak2021quantumneuralnetworksconcepts}.
@@ -188,115 +151,86 @@ The operational workflow of a common QNN involves the stages shown in Fig. \ref{
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.15]{figures/nns.png}
+    \includegraphics[scale=0.2]{figures/nns.png}
     \caption{a) Main components of classical neural networks. b) Components in proposed QNN}
     \label{fig:qnn1}
 \end{figure}
 
 
-Now, the previously described QNN structure is usually modified to match the specific needs of the problem. 
-For instance, the feature map can be done in different ways like basis encoding, amplitude encoding, product encoding, angle encoding, etc. 
-In a similar way, the variational quantum algorithm will be designed according to the problem and there are several ways to do it \cite{9528698}.
-It has been demonstrated that Quantum Neural Networks (QNNs), implemented as variational quantum circuits with classical optimizers
-for tuning the parameters, can outperform NNs on relatively small datasets, despite their significantly 
-lower complexity and fewer parameters \cite{10015720}. For instance, QNNs achieved an average accuracy improvement of 7\% over 
-classical NNs in experiments, even with orders of magnitude fewer parameters.
-These advantages were also noticed in medical image classification \cite{10613907, 9293291}. 
-However, these advantages were observed under the constraints of current noisy intermediate-scale quantum (NISQ) hardware, which limits problem
-sizes due to qubit counts and error rates. As quantum hardware advances, it is expected that QNNs will scale to larger problem sizes, though 
-challenges such as error mitigation, circuit depth limitations, and optimal entanglement strategies must first be addressed.
-
+Now, the previously described QNN structure is usually modified to match the specific needs of the problem. For instance, the feature map can be done in different ways like basis encoding, amplitude encoding, product encoding, angle encoding, etc. In a similar way, the variational quantum algorithm will be designed according to the problem and there are several ways to do it \cite{9528698}.
+It has been demonstrated that Quantum Neural Networks (QNNs), implemented as variational quantum circuits with classical optimizers for tuning the parameters, can outperform NNs on relatively small datasets, despite their significantly lower complexity and fewer parameters \cite{10015720}. For instance, QNNs achieved an average accuracy improvement of 7\% over classical NNs in experiments, even with orders of magnitude fewer parameters. These advantages were also noticed in medical image classification \cite{10613907, 9293291}. However, these advantages were observed under the constraints of current noisy intermediate-scale quantum (NISQ) hardware, which limits problem
+sizes due to qubit counts and error rates. As quantum hardware advances, it is expected that QNNs will scale to larger problem sizes, though challenges such as error mitigation, circuit depth limitations, and optimal entanglement strategies must first be addressed.
 
 \subsection*{Quantum Suport Vector Machines (QSVMs)}
-In progress...
 
-
-\begin{comment}
-\paragraph{Construct train and test data.}
-In the Sales train dataset, it only provides the sale within one day, but we need to predict the sale of next month. So we sum the day's sale into month's sale group by item, shop, date(within a month).
-In the Sales train dataset, it only contains two columns(item id and shop id). Because we need to provide the sales of next month, we add a date column for it, which stand for the date information of next month.]
-
-\subsection{Headings: second level}
-\lipsum[5]
+Classical suport vector machines (SVMs) are supervised learning algoruthms involved in linear discriminations. The method seeks to find an optimal hyperplane separating two classes of data in a high-dimensional space cite{Vapnik2000}. The hyperplane is defined by the equation 
 \begin{equation}
-\xi _{ij}(t)=P(x_{t}=i,x_{t+1}=j|y,v,w;\theta)= {\frac {\alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}{\sum _{i=1}^{N} \sum _{j=1}^{N} \alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}}
+  w^T x + b = 0,
+  \label{eq:hyperplane}
 \end{equation}
 
-\subsubsection{Headings: third level}
-\lipsum[6]
+where $w$ is the weight vector, $x$ is the input data, and $b$ is the bias term. The goal of SVMs is to maximize the margin between the hyperplane and the nearest data points from each class, known as support vectors. The hyperplane plays the role of a decision boundary, and the support vectors are the critical data points that determine its position. The QSVM algorithm is a quantum version of the classical SVM, which uses quantum computing to enhance the efficiency and performance of the classification process. In order to describe the QSVM, let us consider linear SVM with a hyperplane given by equation \ref{eq:hyperplane}. Then, we can define the following optimization problem:
+\begin{equation}
+  \min_{w,b} \frac{1}{2} ||w||^2
+  \label{eq:opt}
+\end{equation}
+subject to the constraint:
+\begin{equation}
+  y^{i} (w^T x^i + b) \geq 1
+  \label{eq:constraint}
+\end{equation}
+where $y^i$ is the label, i.e $1$ or $-1$, of the $i$-th data point with $i = {1, ...,M}$, and $x^i$ is the corresponding feature vector. The optimization problem in Eq. \ref{eq:opt} and Eq. \ref{eq:constraint} can be solved using Lagrange multipliers, leading to the definiton of our objective function in Eq. \ref{eq:obj_fun} and the dual problem in Eq. \ref{eq:dual}: 
+\begin{equation}
+  L(w, b, \alpha)=\frac{1}{2}||w||^2 - \sum_{i}^{M} [\alpha^{i}(w^T x^{i} - c)-1]
+  \label{eq:obj_fun}
+\end{equation}
+\begin{equation}
+    \min_{w,b}\max_{\alpha}(L(w, b, \alpha)) 
+  \label{eq:dual}
+\end{equation}
 
-\paragraph{Paragraph}
-\lipsum[7]
+Then to maximize the objective function \ref{eq:dual}, we obtain the following constraints:
+\begin{equation}
+  w^{i} - \alpha^{i} y^{i} x^{i} = 0 \, ; \sum_{i}^{M} \alpha^{i} y^{i} = 0 \, ; \alpha^{i} \geq 0
+  \label{eq:constraints}
+\end{equation}
+And, the solution of the optimization problem, i.e the weights can be described as:
+\begin{equation}
+  w = \sum_{i}^{M} \alpha^{i} y^{i} x^{i}
+  \label{eq:solution}
+\end{equation}
 
-\section{Examples of citations, figures, tables, references}
-\label{sec:others}
-\lipsum[8] \cite{kour2014real,kour2014fast} and see \cite{hadash2018estimate}.
+Now, one of the greatest advantages of the SVM lies in its generalization to nonlinear hypersurfaces via kernel functions \cite{Vapnik2000}. The kernel function maps the input data into a higher-dimensional space, allowing the SVM to find a linear hyperplane in this transformed space. Then, for all kernel functions $K(x^i, x^j)$, we can rewrite the optimization problem in Eq. \ref{eq:dual} as:
+\begin{equation}
+  \min_{\alpha^i}(\frac{1}{2}\sum_{i,j}^{M} \alpha^{i} \alpha^{j} y^{i} y^{j} K(x^i, x^j) - \sum_{i}^{M} \alpha^{i})
+  \label{eq:dual_kernel}
+\end{equation}
 
-The documentation for \verb+natbib+ may be found at
-\begin{center}
-  \url{http://mirrors.ctan.org/macros/latex/contrib/natbib/natnotes.pdf}
-\end{center}
-Of note is the command \verb+\citet+, which produces citations
-appropriate for use in inline text.  For example,
-\begin{verbatim}
-   \citet{hasselmo} investigated\dots
-\end{verbatim}
-produces
-\begin{quote}
-  Hasselmo, et al.\ (1995) investigated\dots
-\end{quote}
+The kernel function $K(x^i, x^j)$ can be any positive definite function, such as the polynomial kernel or the Gaussian kernel. The QSVM algorithm leverages quantum computing to efficiently compute the kernel function and solve the optimization problem. This allows for faster computation of the kernel function and optimization process compared to classical SVMs.
 
-\begin{center}
-  \url{https://www.ctan.org/pkg/booktabs}
-\end{center}
+As shown int Fig.\ref{fig:qsvm}, the QSVM algorithm consists of three main steps \cite{Zeguendry2023}: choosing the kernel and parameter initialization, data encoding, and optimization. In the first stage, the problem is defined by selecting the kernel function and creating the correspondant kernel matrix. The second stage consists of segmenting the objective function and recording its components in qubits and encoding the classical data into quantum states. This is done with binary strings representing the conventional data $x \rightarrow b=(b_1, ..., b_m)^T$, and then convert the strings into $k$ qubit states: $\ket{b_{1}, ..., b_{m}}$. 
+The third stage involves optimizing the kernel matrix and finding the optimal hyperplane that separates the classes in the transformed space. In particular, versions of the Grover algorithm can search the space of all possible objective functions to determine $\alpha^i$, and therefore the weights $w$ in Eq. \ref{eq:solution}, with a quadratic speedup compared to classical algorithms \cite{Drr1999}.
 
-
-\subsection{Figures}
-\lipsum[10] 
-See Figure \ref{fig:fig1}. Here is how you add footnotes. \footnote{Sample of the first footnote.}
-\lipsum[11] 
-
-\begin{figure}
+\begin{figure}[H]
   \centering
-  \fbox{\rule[-.5cm]{4cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-  \caption{Sample figure caption.}
-  \label{fig:fig1}
+  \includegraphics[scale=0.15]{figures/qsvm.png}
+  \caption{QSVM algorithm.}
+  \label{fig:qsvm}
 \end{figure}
 
-\begin{figure} % picture
-    \centering
-    \includegraphics{test.png}
-\end{figure}
+QSVMs differ from classical SVMs because their kernel functions cannot be computed exactly. Instead, quantum kernel evaluations inherently involve statistical uncertainty due to finite sampling—even on error-corrected quantum computers since they are estimated as sample means from a limited number of measurements. Additionally, recent research highlights that quantum kernels may suffer from exponential concentration if the feature map is not designed carefully \cite{Thanasilp2022}, i.e predictions on unseen inputs are independent of the input data. 
 
-\subsection{Tables}
-\lipsum[12]
-See awesome Table~\ref{tab:table}.
+However, QSVMs can still be advantageous in various scenarios, particularly when the kernel function is complex or high-dimensional. The quantum speedup in computing the kernel matrix and optimizing the hyperplane can lead to significant improvements in classification performance, especially for large datasets \cite{Akrom2024}. Moreover, QSVMs can leverage quantum entanglement and superposition to explore the feature space more efficiently than classical SVMs Furthermore, quantum kernels can capture complex relationships between data points that classical kernels may struggle to represent by including mapping into quantum feature spaces. These kernels can identify intricate non-linear relationships and enhance accuracy, making them particularly useful for high-dimensional datasets \cite{Srikumar2021}. Thus, this characteristic can lead to better generalization on new data, reducing overfitting. 
+Finally, it is noticeable that as the size and dimensionality of the datasets increase, the computational advantages of QSVMs become more pronounced as it mantains their efficiency and performance \cite{Konar2022}. 
 
-\begin{table}
- \caption{Sample table title}
-  \centering
-  \begin{tabular}{lll}
-    \toprule
-    \multicolumn{2}{c}{Part}                   \\
-    \cmidrule(r){1-2}
-    Name     & Description     & Size ($\mu$m) \\
-    \midrule
-    Dendrite & Input terminal  & $\sim$100     \\
-    Axon     & Output terminal & $\sim$10      \\
-    Soma     & Cell body       & up to $10^6$  \\
-    \bottomrule
-  \end{tabular}
-  \label{tab:table}
-\end{table}
+QSVMs have been applied in various domains, including finance, healthcare, software designing, etc. In finance, some authors have study the applicability on stock exchange datasets \cite{bhattacharjee2024classificationfinancialdatausing}. In healthcare, their ability to process high-dimensional medical data enables more accurate disease diagnosis, such as early cancer detection through medical imaging on skin lessions \cite{10613907}, as well as predicting expired pharmaceutical compounds corrosion inhibition capacity \cite{Rosyid2024} and identifying cardiac diseases \cite{Ozpolat2023}. Within software evolution, QSVMs contribute to robust bug detection by analyzing commits from code repositories \cite{Nadim_2025}. Despite these advantages, current limitations in quantum hardware, such as qubit coherence and error rates present challenges to widespread adoption. As quantum computing technology matures, QSVMs are poised to drive transformative advancements in machine learning, offering scalable solutions for complex, large-scale data analysis.
 
-\subsection{Lists}
-\begin{itemize}
-\item Lorem ipsum dolor sit amet
-\item consectetur adipiscing elit. 
-\item Aliquam dignissim blandit est, in dictum tortor gravida eget. In ac rutrum magna.
-\end{itemize}
+\subsection{Quantum Decision Trees (QDTs)}
+A decision tree is a supervised learning algorithm that recursively partitions the input space into regions based on feature values, creating a tree-like structure. Each internal node represents a feature, each branch corresponds to a decision based on that feature, and each leaf node represents a class label. The goal of a decision tree is to create a model that predicts the target variable by learning simple decision rules inferred from the data features. The art of decision tree learning lies in selecting the decision function at each node, which can be based on various criteria such as information gain, Gini impurity, or 'most organized' subdatasets, using Shannon's entropy \cite{Ethem2020}.  
 
-\end{comment}
+The quantum mechanical analogue of a decision tree, described by Lu and Brainstein \cite{} is a quantum decision tree (QDT), intrinsically similar to the classical version with the only difference of using quantum feature states with quantum training dataset that can be represented with $n$ quantum data pairs $D = {(\ket{x^1},\ket{y^1}), ..., (\ket{x^n},\ket{y^n})}$ where $\ket{x^i}$ is the $i$-th d-dimensional quantum data state and $\ket{y_i}$ is the corresponding label.
+Notice that $\ket{x^i}=(\ket{x^i_1}, ..., \ket{x^i_d})$ represents d measurements of the $i$-th state from d attributes. In each node, the QDT performs a quantum measurement on the feature state $\ket{x^i}$ to determine the feature value. The measurement collapses the quantum state into a classical bit string, which is then used to decide which branch of the tree to follow, in this case using the von Neumann entropy as splitting criterion. This process continues until a leaf node is reached, where the class label is assigned based on the majority class of the training samples in that leaf.
+Though QDTs are conceptually intuitive and represent a natural extension of classical decision trees, this type of algorithms remains in its nascent stages, with several critical research gaps yet to be addressed. Key open problems include: establishing theoretical error bounds for QDTs, developing efficient quantum pruning strategies, handling incomplete or missing attribute data, incorporating attribute cost variability, mitigating the effects of quantum noise in training data, and generalizing QDT construction for mixed-state training data. Furthermore, as a supervised learning method, empirical validation is essential; however, unlike classical machine learning—which benefits from extensive public datasets—quantum machine learning lacks standardized experimental benchmarks, hindering progress. Addressing these challenges will be crucial for advancing practical quantum learning algorithms.
 
 \bibliography{references}
 
